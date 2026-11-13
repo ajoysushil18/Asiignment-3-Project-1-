@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Web App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-container">
+        <!-- Header -->
+        <div class="app-header">
+            <h1>Weather Web App</h1>
+            <p>Get current and 24-hour weather for any location</p>
+        </div>
+        
+        <!-- Search & Location Box -->
+        <div class="search-box">
+            <input type="text" id="location-input" placeholder="Enter a location (e.g., Dhaka, Chittagong)">
+            <button id="location-btn" class="secondary-btn">📍 Use My Location</button>
+            <button id="search-btn" class="primary-btn" disabled>Get Weather</button>
+        </div>
+
+        <!-- Loading & Error Messages -->
+        <div id="loading" class="hidden">Fetching weather data...</div>
+        <div id="error-message" class="error hidden"></div>
+
+        <!-- Main Weather Content -->
+        <div id="weather-content" class="hidden">
+            <!-- Current Weather Card -->
+            <div class="current-weather">
+                <div class="current-left">
+                    <div id="weather-icon" class="big-icon">⛅</div>
+                    <div>
+                        <h2 id="city-name">--</h2>
+                        <p id="update-time" class="update-time">Updated: --</p>
+                        <div class="temp-display"><span id="temperature">--</span>°C</div>
+                        <div id="weather-condition" class="condition">--</div>
+                    </div>
+                </div>
+
+                <div class="vertical-divider"></div>
+
+                <div class="current-right">
+                    <div class="detail-row"><span>💨 Wind Speed:</span> <strong id="wind-speed">-- km/h</strong></div>
+                    <div class="detail-row"><span>💧 Chance of Rain:</span> <strong id="rain-chance">--%</strong></div>
+                    <div class="detail-row"><span>🌡️ Feels Like:</span> <strong id="feels-like">--°C</strong></div>
+                </div>
+
+                <button id="refresh-btn" class="refresh-btn" title="Refresh the weather outlook">
+                     Refresh
+                </button>
+            </div>
+
+            <!-- 24-Hour Toggle Section -->
+            <div class="forecast-section">
+                <div class="forecast-header">
+                    <h3> Hourly Forecast</h3>
+                    <div class="toggle-buttons">
+                        <button id="prev-btn" class="toggle-btn active">Previous 24 Hours</button>
+                        <button id="next-btn" class="toggle-btn">Next 24 Hours</button>
+                    </div>
+                </div>
+
+                <!-- Slider Container -->
+                <div id="hourly-slider" class="hourly-slider">
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
